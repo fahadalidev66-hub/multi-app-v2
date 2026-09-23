@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi Container App V2</title>
+</head>
+<body>
+
+    <h1>My Docker Multi-Container App 🚀</h1>
+
+    <p>Frontend is running in Nginx.</p>
+
+    <button onclick="getBackend()">Call Backend</button>
+
+    <p id="result"></p>
+
+    <script>
+        function getBackend() {
+            fetch("http://localhost:5001")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("result").innerText = data;
+                });
+        }
+    </script>
+
+</body>
+</html>
