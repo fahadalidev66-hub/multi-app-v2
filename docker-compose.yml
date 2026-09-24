@@ -1,0 +1,15 @@
+services:
+
+  backend:
+    build: ./backend
+    container_name: v2-backend-compose
+    ports:
+      - "5002:5000"
+
+  frontend:
+    build: ./frontend
+    container_name: v2-frontend-compose
+    ports:
+      - "8082:80"
+    depends_on:
+      - backend
